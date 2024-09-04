@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+    margin:0px;
+    padding:0px;
+}
+#container{
+    width:100vh;
+    height:100vh;
+    background-color: rgb(248, 165, 156);
+    display:flex;
+    justify-content:center;
+    align-items: center;
+
+}
+#button{
+    position:relative;
+  
+    padding-left:12px;
+    padding-top:8px;
+    height:35px;
+    width:80px;
+    color:white;
+    background-color: red;
+    z-index: 1;
+    
+
+}
+#button::before{
+    position:absolute;
+    content:"";
+    background-color: black;
+    /* so that it got spread over all of the button including added padding  */
+    top:0;     
+    left:0;
+    right:0;
+    bottom:0;
+    
+    
+    z-index: -1;
+    transform:scaleX(0);
+    transition:1s;
+    transform-origin: left;
+    
+}
+#button:hover::before{
+    transform:scaleX(1);
+   
+}
+
